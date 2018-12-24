@@ -1,0 +1,134 @@
+﻿<!-- Code by Cen XIN -->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Xmas Eve</title>
+    <meta charset="utf-8">
+    <style>
+        body, html, iframe {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 50px;
+            box-sizing: border-box
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+            height: 47px;
+            padding-top: 2px;
+            border-bottom: 1px solid #000;
+            box-shadow: 0 -10px 25px #ccc inset;
+            background-color: #eee
+        }
+
+        aside, div, h1, p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: center;
+            font-size: 16px;
+            font-weight: inherit;
+            line-height: 22px;
+            padding: 0;
+            margin: 0;
+            cursor: default
+        }
+
+        aside, h1 {
+            display: inline
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px dashed #000
+        }
+
+            a:hover {
+                border-bottom: 1px solid red
+            }
+
+            a[href="0"] {
+                text-decoration: line-through;
+                pointer-events: none;
+                border-bottom: 0;
+                color: #ccc
+            }
+
+        .button {
+            float: left;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0;
+            margin: 2px 0 0 10px;
+            border: 1px solid #888;
+            border-color: #ddd #888 #888 #ddd;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+            .button:hover {
+                color: red;
+                border-bottom-color: #888
+            }
+
+        .r {
+            margin-right: 10px
+        }
+
+        time {
+            display: none
+        }
+    </style>
+</head>
+
+<body marginwidth="0" marginheight="0">
+    <canvas id="c" height="356" width="446">
+
+        <script>
+            var collapsed = true;
+            function toggle() {
+                var fs = top.document.getElementsByTagName('frameset')[0];
+                var f = fs.getElementsByTagName('frame');
+                if (collapsed) {
+                    fs.rows = '250px,*';
+                    fs.noResize = false;
+                    f[0].noResize = false;
+                    f[1].noResize = false;
+                } else {
+                    fs.rows = '30px,*';
+                    fs.noResize = true;
+                    f[0].noResize = true;
+                    f[1].noResize = true;
+                }
+                collapsed = !collapsed;
+            }
+        </script>
+
+        <script>
+            var b = document.body;
+            var c = document.getElementsByTagName('canvas')[0];
+            var a = c.getContext('2d');
+            document.body.clientWidth;
+        </script>
+
+        <script>
+            // Author: ponce
+            for (p in a) a[p[0] + (p[6] || '')] = a[p]; var M = Math, C = M.cos, S = M.sin, R = M.random, T = 0, x = [], y = [], W = innerWidth, H = innerHeight, L = 2047, Z = 100, V = 20, N = 511, M = 1337; c.width = W, b.style.overflow = 'hidden', b.style.margin = '0px', c.height = H; g = 'globalAlpha'; h = 'fillStyle'; for (i = N; i--;) { x[i] = L * R(); y[i] = L * R() } setInterval(function () { T += 1 / V; a[g] = 0.2; function m(c) { a[h] = c } m('#002'); a.fc(0, 0, W, H); a[g] = 1; u = 1; m('#ffc'); for (i = 0; i < N / 3; ++i) { d = u = (u * M + 1) & L; u = (u * M + 1) & L; if (C(T * Z + i) < 0.5) { a.fx("\u2605", d, u) } } a.ba(); a.arc(2 * W / 3, H / 3, 40, 0, 6.3, 1); a.ca(); a.fill(); m('#cfc'); B = H - V; for (j = 0; j < 5; ++j) { s = 90 - j * V; a.font = s + "px serif"; F = 1; for (i = 0; i < W; i += (F = (F * M) % Z)) { a.fx("\u25B2", i - s / 2, B + S(i) * 30); } B -= s / 2; } m('#eef'); for (i = N; i--;) { e = x[i]; f = y[i]; a.fx("\u06DE", e, f); y[i] = (f + 1) % L; x[i] = (e + C(i + T) / 3) % L } for (i = N * 3; i--;) { a.fc((x[i & N] + i) & L, (y[i & N] + i) & L, 1, 1) } for (i = W; i--;) { d = Z + V * S(i / Z) + S(i / 10); a.fc(i, H - d, 1, d) } }, 50);
+        </script>
+</body>
+</html>

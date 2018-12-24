@@ -1,0 +1,134 @@
+﻿<!-- Code by Cen XIN -->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Merry Xmas :-)</title>
+    <meta charset="utf-8">
+    <style>
+        body, html, iframe {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-top: 50px;
+            box-sizing: border-box
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+            height: 47px;
+            padding-top: 2px;
+            border-bottom: 1px solid #000;
+            box-shadow: 0 -10px 25px #ccc inset;
+            background-color: #eee
+        }
+
+        aside, div, h1, p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            text-align: center;
+            font-size: 16px;
+            font-weight: inherit;
+            line-height: 22px;
+            padding: 0;
+            margin: 0;
+            cursor: default
+        }
+
+        aside, h1 {
+            display: inline
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 1px dashed #000
+        }
+
+            a:hover {
+                border-bottom: 1px solid red
+            }
+
+            a[href="0"] {
+                text-decoration: line-through;
+                pointer-events: none;
+                border-bottom: 0;
+                color: #ccc
+            }
+
+        .button {
+            float: left;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding: 0;
+            margin: 2px 0 0 10px;
+            border: 1px solid #888;
+            border-color: #ddd #888 #888 #ddd;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+            .button:hover {
+                color: red;
+                border-bottom-color: #888
+            }
+
+        .r {
+            margin-right: 10px
+        }
+
+        time {
+            display: none
+        }
+    </style>
+</head>
+
+<body marginwidth="0" marginheight="0">
+    <canvas id="c" height="356" width="446">
+
+        <script>
+            var collapsed = true;
+            function toggle() {
+                var fs = top.document.getElementsByTagName('frameset')[0];
+                var f = fs.getElementsByTagName('frame');
+                if (collapsed) {
+                    fs.rows = '250px,*';
+                    fs.noResize = false;
+                    f[0].noResize = false;
+                    f[1].noResize = false;
+                } else {
+                    fs.rows = '30px,*';
+                    fs.noResize = true;
+                    f[0].noResize = true;
+                    f[1].noResize = true;
+                }
+                collapsed = !collapsed;
+            }
+        </script>
+
+        <script>
+            var b = document.body;
+            var c = document.getElementsByTagName('canvas')[0];
+            var a = c.getContext('2d');
+            document.body.clientWidth;
+        </script>
+
+        <script>
+            // Author: Chris Price
+            c.style.cssText = "position:absolute;top:0;left:0;width:100%;height:100%"; var q = c.width = c.height = c.clientWidth, X = 0.5, g = 0, w = X, x, l, n = [], k = [], e = frames.parent.location.hash, o = e ? e.substr(1) : "MerryChristmas", u, r = 0, t, v, h = Math, d = h.random, s = h.floor, Z = 10; a.strokeStyle = "rgba(255,255,255,0.4)"; a.fillRect(0, 0, q, q); c.onmousemove = function (f) { g = f.clientX / q - X; w = f.clientY / q }; function j(B) { var i = d() * (q + Z) - Z, A = d() + X, f = d() * 5, z = d() * Z; this.d = function () { a.setTransform(A, 0, 0, A, i, B); a.beginPath(); a.moveTo(5, 0); a.lineTo(5, Z); a.moveTo(1, 2); a.lineTo(9, 8); a.moveTo(1, 8); a.lineTo(9, 2); a.stroke(); if (z > 0) { f += d() / 2 - 0.25 + g / 2; B += z; i += f; if ((d() > 0.7) && (l.data[s(B) * q * 4 + s(i) * 4] > 0 || B > q * 0.8) || i < (q / -2) || i > (2 * q)) { z = 0; return 1 } } } } a.textAlign = "center"; a.fillStyle = "#111"; a.font = "bold 150px Arial"; a.fillText(o, q / 2, q / 2); a.fillStyle = "#000"; l = a.getImageData(0, 0, q, q); setInterval(function () { a.fillRect(0, 0, q, q); x && a.putImageData(x, 0, 0); while (t = k.shift()) { t.d() } x = a.getImageData(0, 0, q, q); u = []; while (t = n.shift()) { (t.d() ? k : u).push(t) } n = u; while (d() > w / 2 + 0.1) { n.push(new j(-Z)) } }, Z)
+        </script>
+</body>
+</html>
